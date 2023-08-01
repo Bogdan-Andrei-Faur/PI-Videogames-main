@@ -26,7 +26,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     release: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
     },
     rating: {
       type: DataTypes.FLOAT,
@@ -36,6 +36,10 @@ module.exports = (sequelize) => {
       }
     },
   }, 
-  {timeStamp: false,}
+  {
+    timeStamp: false,
+    createdAt: false,
+    updatedAt: false,
+  }
   );
 };

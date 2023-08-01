@@ -15,8 +15,8 @@ const getApiGames = async () => {
                 return {
                     id: g.id,
                     name: g.name,
-                    genres: g.genres.map((gen) => gen.name),
                     description: g.description,
+                    genres: g.genres.map((gen) => gen.name),
                     platforms: g.platforms.map((platf) => platf.platform.name),
                     image: g.background_image,
                     release: g.released,
@@ -53,9 +53,9 @@ const getAllGames = async (req, res) => {
     const {name} = req.query;
 
     let apiInfo = await getApiGames();
-    let DbInfo = await getDbGames();
+    let dbInfo = await getDbGames();
     
-    const allGames = DbInfo.concat(apiInfo);
+    const allGames = dbInfo.concat(apiInfo);
 
     try {
         if (name) {
@@ -64,6 +64,7 @@ const getAllGames = async (req, res) => {
                     return {
                         id: nam.id,
                         name: nam.name,
+                        description: nam.description,
                         genres: nam.genres.map((gen) => gen.name),
                         platforms: nam.platforms.map((platf) => platf.platform.name),
                         image: nam.background_image,
@@ -71,11 +72,11 @@ const getAllGames = async (req, res) => {
                         rating: nam.rating,
                 }
             });
-            let getDbName = DbInfo.filter(game => game.name.toUpperCase().includes(name.toUpperCase()));
+            let getDbName = dbInfo.filter(game => game.name.toUpperCase().includes(name.toUpperCase()));
             let getGameName = getDbName.concat(getApiName);
         
             if (getGameName.length === 0){
-                res.status(404).send("Falla busqueda");
+                res.status(404).send(`There is no Games whith this name: ${name}.`);
             } else {
                 res.send(getGameName);
             }
@@ -83,7 +84,7 @@ const getAllGames = async (req, res) => {
             res.send(allGames);
         }
     } catch (error) {
-        res.status(404).send("Falla try");
+        res.status(404).send("API access failed.");
     }
 }
 
