@@ -5,11 +5,16 @@ const {Videogame, Genre} = require("../db");
 
 const getGames = async () => {
     let apiGames = [];
+    const apiRequests = [];
 
-    for (let i = 1; i <= 5; i++){
-        let page = await axios.get(`${API_URL}/games?key=${API_KEY}&page=${i}`);
-
-        let game = page.data.results.map((g) => {
+    for (let i = 1; i <= 5; i++) {
+        apiRequests.push(axios.get(`${API_URL}/games?key=${API_KEY}&page=${i}`));
+    }
+    
+    const responses = await Promise.all(apiRequests);
+    
+    for (const response of responses) {
+        const games = response.data.results.map((g) => {
             return {
                 id: g.id,
                 name: g.name,
@@ -19,9 +24,9 @@ const getGames = async () => {
                 image: g.background_image,
                 release: g.released,
                 rating: g.rating,
-            }
-        })
-        apiGames = apiGames.concat(game);
+            };
+        });
+        apiGames.push(...games);
     }
 
     let dbGames = await Videogame.findAll({
@@ -30,9 +35,9 @@ const getGames = async () => {
             attributes: ["name"],
             through: {
                 attributes: [],
-            }
-        }
-    })
+            },
+        },
+    });
 
     return (dbGames.concat(apiGames));
 }
