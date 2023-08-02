@@ -8,7 +8,6 @@ const Videogames = require("./Videogames");
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-
 router.use("/videogames", Videogames);
 // router.use("/genres", Genres);
 
