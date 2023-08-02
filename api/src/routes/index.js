@@ -10,6 +10,6 @@ const Genres = require("./Genres");
 // Ejemplo: router.use('/auth', authRouter);
 
 router.use("/videogames", Videogames);
-// router.use("/genres", Genres);
+router.use("/genres", Genres);
 
 module.exports = router;

@@ -1,8 +1,8 @@
-// const {Router} = require("express");
-// const router = Router();
+const {Router} = require("express");
+const router = Router();
 
-// const {getGenres} = require("../controllers/getGenres");
+const {getGenres} = require("../controllers/getGenres");
 
-// router.get("/", getGenres);
+router.get("/", getGenres);
 
-// module.exports = router;
+module.exports = router;
