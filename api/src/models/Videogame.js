@@ -26,7 +26,10 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     release: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.STRING,
+      validate: {
+        isDate: true,
+      }
     },
     rating: {
       type: DataTypes.FLOAT,
