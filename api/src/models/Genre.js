@@ -13,6 +13,10 @@ module.exports = (sequelize) => {
         allowNull: false,
     },
   }, 
-  {timeStamp: false,}
+  {
+    timeStamp: false,
+    createdAt: false,
+    updatedAt: false,
+  }
   );
 };

@@ -12,14 +12,12 @@ const postGame = async (name, description, genres, platforms, image, release, ra
     })
     
     let newGameGenres = await Genre.findAll({
-        where: {
-            name: genres,
-        }
+        where: {name: genres}
     })
     
     newGame.addGenre(newGameGenres);
     
-    return (`The Game ${name} was created successfully.`);
+    return(`The Game "${name}" was created successfully.`);
 }
 
 module.exports = {postGame};
