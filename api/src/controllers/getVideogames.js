@@ -10,7 +10,7 @@ const getGames = async () => {
     for (let i = 1; i <= 5; i++) {
         apiRequests.push(axios.get(`${API_URL}/games?key=${API_KEY}&page=${i}`));
     }
-    
+
     const responses = await Promise.all(apiRequests);
     
     for (const response of responses) {
