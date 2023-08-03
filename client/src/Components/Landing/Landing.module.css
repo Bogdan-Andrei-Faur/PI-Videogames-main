@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "AnimeAce2";
+    src: url("../Fonts/animeace2_reg.ttf");
+}
+
+.landingPage {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://www.pixel4k.com/wp-content/uploads/2018/09/the-sojourn-video-game-key-art_1537691434.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .header {
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #3f51b5;
+    border-radius: 10px;
+  }
+  
+  .header h1 {
+    font-family: "AnimeAce2";
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-content {
+    text-align: center;
+    z-index: 1;
+    color: #ffffff;
+  }
+  
+  .hero-content h2 {
+    font-family: "AnimeAce2";
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #3f51b5;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "AnimeAce2";
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .technologies {
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #3f51b5be;
+    border-radius: 10px;
+  }
+  
+  .technology-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .technology-icons img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .header h1 {
+      font-size: 30px;
+    }
+    
+    .hero-content h2 {
+      font-size: 24px;
+    }
+    
+    .btn {
+      font-size: 16px;
+    }
+    
+    .technologies h3 {
+      font-size: 20px;
+    }
+  }
