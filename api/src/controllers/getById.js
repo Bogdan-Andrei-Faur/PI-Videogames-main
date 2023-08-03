@@ -3,10 +3,9 @@ const {API_KEY, API_URL} = process.env;
 const axios = require("axios");
 const {Videogame, Genre} = require("../db");
 
-const getById = async (id) => {
-    if (id.length > 5){
-        let findDb = await Videogame.findOne({
-            where: {id},
+const getById = async (id, type) => {
+    if (type === "bd"){
+        let findDb = await Videogame.findByPk(id, {
             include: {
                 model: Genre,
                 attributes: ["name"],
@@ -16,18 +15,7 @@ const getById = async (id) => {
             }
         });
         
-        if (findDb){
-            let gameId = {
-                id: findDb.id,
-                name: findDb.name,
-                genres: findDb.genres.map((gen) => gen.name),
-                platforms: findDb.platforms.map((platf) => platf.platform.name),
-                image: findDb.background_image,
-                release: findDb.released,
-                rating: findDb.rating,
-            }
-            return gameId;
-        }
+        return findDb;
     } else {
         const api = await axios(`${API_URL}/games/${id}?key=${API_KEY}`);
         
@@ -43,5 +31,5 @@ const getById = async (id) => {
         return game;
     }
 }
-
+getById()
 module.exports = {getById};

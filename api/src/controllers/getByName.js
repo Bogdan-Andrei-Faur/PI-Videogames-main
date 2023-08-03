@@ -2,35 +2,46 @@ require("dotenv").config();
 const {API_KEY, API_URL} = process.env;
 const axios = require("axios");
 const {Videogame, Genre} = require("../db");
+const {Op} = require("sequelize");
 
 
 
 const getByName = async (name) => {
     const getDbGames = await Videogame.findAll({
-        include: {
-            model: Genre,
-            attributes: ["name"],
-            through: {
-                attributes: [],
+        where: {
+            name: {
+                [Op.iLike]: `%${name}%`,
             }
-        }
+        },
+        include: [
+            {
+                model: Genre,
+                attributes: ["name"],
+                through: {
+                    attributes: [],
+                }
+            }
+        ]
     })
+
     let getApiName = (await axios(`${API_URL}/games?key=${API_KEY}&search=${name}`))
-        .data.results.slice(0, 15).map(nam => {
+        .data.results.map(nam => {
+            const genArray = nam.genre ? nam.genres.map((gen) => gen.name) : []
+            const platArray = nam.platforms ? nam.platforms.map((gen) => gen.name) : []
                 return {
-                    id: nam.id,
-                    name: nam.name,
+                    id: nam.id ? nam.id : "undifined",
+                    name: nam.name ? nam.name : "",
                     description: nam.description,
-                    genres: nam.genres.map((gen) => gen.name),
-                    platforms: nam.platforms.map((platf) => platf.platform.name),
+                    genres: genArray,
+                    platforms: platArray,
                     image: nam.background_image,
                     release: nam.released,
                     rating: nam.rating,
                 }
             });
-    let getDbName = getDbGames.filter(game => game.name.toUpperCase().includes(name.toUpperCase()));
-    let getGameName = getDbName.concat(getApiName);
-        
+
+    let getGameName = getDbGames.concat(getApiName);
+
     const results = getGameName;
 
     if (results.length){
