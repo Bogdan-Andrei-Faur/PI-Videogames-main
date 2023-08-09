@@ -1,4 +1,4 @@
-import { CLEAN_STATE_NAME, GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL} from "../Actions/Actions";
+import { GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, CLEAN_STATE_NAME, CLEAN_DETAIL} from "../Actions/Actions";
 
 const initialState = {
     allGames: [],
@@ -28,6 +28,11 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 byName: action.payload
+            }
+        case CLEAN_DETAIL:
+            return {
+                ...state,
+                gameDetail: action.payload
             }
         default:
             return state;

@@ -10,6 +10,7 @@ export default function Cards({games}){
                     return (
                         <Card
                             key={id}
+                            id={id}
                             image={image}
                             name={name}
                             genres={genres}

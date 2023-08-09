@@ -15,7 +15,7 @@ export const getByName = name => {
     return dispatch => {
     axios(`http://localhost:3001/videogames?name=${name}`)
         .then(res => {
-        dispatch({ type: GET_GAME_BY_NAME, payload: res.data});
+        dispatch({type: GET_GAME_BY_NAME, payload: res.data});
         })
         .catch(error => alert(error));
     }
@@ -34,10 +34,10 @@ export const GET_GENRES = "GET_GENRES";
 //---------------------------------------------------------------------
 
 //Traigo los juegos por id
-export const getById = (id) => {
+export const getById = id => {
     return dispatch => axios(`http://localhost:3001/videogames/${id}`)
-        .then(res => dispatch({ type: GET_GAME_DETAIL, payload: res.data}))
-        .catch(err => alert(err));
+        .then(res => dispatch({type: GET_GAME_DETAIL, payload: res.data}))
+        .catch(error => alert(error));
 };
 export const GET_GAME_DETAIL = 'GET_GAME_DETAIL';
 
@@ -52,3 +52,11 @@ export const cleanStateName = (payload) => {
 export const CLEAN_STATE_NAME = "CLEAN_STATE_NAME"
 
 //---------------------------------------------------------------------
+
+//Borra el State de GetById
+export const cleanGameDetail = payload => {
+    return dispatch => {
+        dispatch({ type: CLEAN_DETAIL, payload})
+    }
+};
+export const CLEAN_DETAIL = 'CLEAN_DETAIL';
