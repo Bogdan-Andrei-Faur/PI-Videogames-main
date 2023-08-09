@@ -12,8 +12,10 @@ const getGenres = async () => {
 
     await Genre.bulkCreate(apiGenres, {ignoreDuplicates: true});
 
+    const dbGenres = await Genre.findAll()
+
     console.log("Se ha cargado correctamente")
-    
+    return dbGenres;
 };
 
 module.exports = {getGenres};

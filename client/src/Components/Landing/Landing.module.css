@@ -8,9 +8,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("https://images2.alphacoders.com/586/586169.jpg");
-    background-size: cover;
-    background-position: center;
   }
   
   .titulo {

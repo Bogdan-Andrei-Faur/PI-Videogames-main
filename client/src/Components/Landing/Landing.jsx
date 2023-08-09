@@ -4,14 +4,14 @@ import {Link} from "react-router-dom";
 
 export default function Landing(){
   return (
-  <div className={styles.landingPage}>
-    <header className={styles.titulo}>
-      <h1>VideoGames PI</h1>
-    </header>
+  <div className={styles.landing}>
 
-    <main>
+      <header className={styles.titulo}>
+        <h1>VideoGames PI</h1>
+      </header>
+
       <section className={styles.intro}>
-        <div className={styles['intro-content']}>
+        <div className={styles["intro-content"]}>
           <h2>Bienvenido al PI de Videogames</h2>
           <br />
           <h3>Esta pagina es un proyecto individual, para dirigirte al Home presiona el boton "Start".</h3>
@@ -20,13 +20,12 @@ export default function Landing(){
 
       <section className={styles.section2}>
         <Link to="/home">
-          <button href="/home" className={styles.btn}>Start</button>
+          <button className={styles.btn}>Start</button>
         </Link>
-        
       </section>
 
       <section className={styles.technologies}>
-        <div className={styles['technology-icons']}>
+        <div className={styles["technology-icons"]}>
           <img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png" alt="JavaScript" />
           <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_logo_icon_146374.png" alt="React" />
           <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png" alt="Redux" />
@@ -37,7 +36,7 @@ export default function Landing(){
           <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sql_icon_130152.png" alt="SQL" />
         </div>
       </section>
-    </main>
+    
   </div>
     )
 }
