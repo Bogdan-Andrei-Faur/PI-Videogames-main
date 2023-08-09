@@ -8,6 +8,7 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
     switch(action.type){
+//------------------------------Todos los GET------------------------------
         case GET_GAMES:
             return {
                 ...state,
@@ -23,7 +24,7 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 gameDetail: action.payload
             }
-//---------------------------------------------------------------------
+//-----------------------------Todos los CLEAN-----------------------------
         case CLEAN_STATE_NAME:
             return {
                 ...state,
