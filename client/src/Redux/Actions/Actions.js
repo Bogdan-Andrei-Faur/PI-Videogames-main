@@ -60,3 +60,52 @@ export const cleanGameDetail = payload => {
     }
 };
 export const CLEAN_DETAIL = 'CLEAN_DETAIL';
+
+//---------------------------------------------------------------------
+
+//Filtro por Genero
+export const genresFilter = payload => {
+    return dispatch => {
+        dispatch({ type: GENRES_FILTER, payload})
+    }
+};
+export const GENRES_FILTER = 'GENRES_FILTER';
+
+//---------------------------------------------------------------------
+
+//Filtro por Origen(API o Base de Datos)
+export const originFilter = payload => {
+    return dispatch => {
+        dispatch({ type: ORIGIN_FILTER, payload})
+    }
+};
+export const ORIGIN_FILTER = 'ORIGIN_FILTER';
+
+//---------------------------------------------------------------------
+
+//Ordeno por Nombre(Ascendete y Descendente)
+export const nameOrder = payload => {
+    return dispatch => {
+        dispatch({ type: NAME_ORDER, payload })
+    }
+};
+export const NAME_ORDER = 'NAME_ORDER';
+
+//---------------------------------------------------------------------
+
+//Ordeno por orden Alfabetico(Ascendente y Descendente)
+export const alfaOrder = payload => {
+    return dispatch => {
+        dispatch({ type: ALFA_ORDER, payload })
+    }
+};
+export const ALFA_ORDER = 'ALFA_ORDER';
+
+//---------------------------------------------------------------------
+
+export const ratingOrder = payload => {
+    return dispatch => {
+        dispatch({ type: RATING_ORDER, payload })
+    }
+};
+export const RATING_ORDER = 'RATING_ORDER';

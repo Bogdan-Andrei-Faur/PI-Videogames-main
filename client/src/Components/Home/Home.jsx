@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import { getGames } from "../../Redux/Actions/Actions";
 import style from "./Home.module.css"
 import Cards from "../Cards/Cards";
+import Filters from "../Filters/Filters";
 
 export default function Home (){
     const dispatch = useDispatch();
@@ -20,6 +21,7 @@ export default function Home (){
 
     return (
         <div className={style.content}>
+            <Filters/>
             <Cards games={games}/>
         </div>
     )
