@@ -1,4 +1,4 @@
-import { GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, NAME_ORDER, ALFA_ORDER, RATING_ORDER} from "../Actions/Actions";
+import { GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER} from "../Actions/Actions";
 import { nameASC } from "../../Helpers/sort";
 
 const initialState = {
@@ -8,9 +8,7 @@ const initialState = {
     genres: [],
     genresFilter: "",
     originFilter: "",
-    nameOrder: "",
-    alfaOrder: "",
-    ratingOrder: "",
+    order: "",
 }
 
 export const reducer = (state = initialState, action) => {
@@ -48,6 +46,11 @@ export const reducer = (state = initialState, action) => {
                 gameDetail: action.payload
             }
 //----------------------------Todos los FILTROS----------------------------
+        case ORDER:
+            return {
+                ...state,
+                order: action.payload
+            }
         case GENRES_FILTER:
             return {
                 ...state,
@@ -57,21 +60,6 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 originFilter: action.payload
-            }
-        case NAME_ORDER:
-            return {
-                ...state,
-                nameOrder: action.payload
-            }
-        case ALFA_ORDER:
-            return {
-                ...state,
-                alfaOrder: action.payload
-            }
-        case RATING_ORDER:
-            return {
-                ...state,
-                ratingOrder: action.payload
             }
         default:
             return state;
