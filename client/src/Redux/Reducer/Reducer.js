@@ -1,4 +1,4 @@
-import { GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER} from "../Actions/Actions";
+import { GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER, SET_PAGE} from "../Actions/Actions";
 import { nameASC } from "../../Helpers/sort";
 
 const initialState = {
@@ -9,6 +9,7 @@ const initialState = {
     genresFilter: "",
     originFilter: "",
     order: "",
+    currentPage: 1,
 }
 
 export const reducer = (state = initialState, action) => {
@@ -60,6 +61,12 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 originFilter: action.payload
+            }
+//--------------------------------Paginado---------------------------------
+        case SET_PAGE:
+            return {
+                ...state,
+                currentPage: action.payload,
             }
         default:
             return state;

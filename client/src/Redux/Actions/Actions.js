@@ -90,3 +90,13 @@ export const originFilter = payload => {
     }
 };
 export const ORIGIN_FILTER = 'ORIGIN_FILTER';
+
+//---------------------------------------------------------------------
+
+//Paginacion
+export const setPage = payload => {
+    return dispatch => {
+        dispatch({ type: SET_PAGE, payload: payload});
+    }
+};
+export const SET_PAGE = "SET_PAGE";

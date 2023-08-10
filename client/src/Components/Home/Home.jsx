@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import style from "./Home.module.css"
 import Cards from "../Cards/Cards";
 import Filters from "../Filters/Filters";
-import { getGames, getGenres } from "../../Redux/Actions/Actions";
+import { getGames, getGenres, setPage } from "../../Redux/Actions/Actions";
 import { nameASC, nameDES, ratingASC, ratingDESC } from "../../Helpers/sort";
 
 export default function Home (){
@@ -14,6 +14,7 @@ export default function Home (){
     const orderState = useSelector(state => state.order);
     const genresFilter = useSelector(state => state.genresFilter);
     const originFilterState = useSelector(state => state.originFilter);
+    const currentPage = useSelector((state) => state.currentPage);
     
     let games = [];
 
@@ -26,7 +27,29 @@ export default function Home (){
 
     if(genresFilter.length !== 0 && genresFilter !== "") games = games.filter(g => g.genres.includes(genresFilter));
     if(originFilterState === 'created') games = games.filter(genre => typeof genre.id === 'string');
-    if(originFilterState === 'existing') games = games.filter(genre => typeof genre.id === 'number');   
+    if(originFilterState === 'existing') games = games.filter(genre => typeof genre.id === 'number');
+
+    const gamesPerPage = 15;
+    const startIndex = (currentPage - 1) * gamesPerPage;
+    const endIndex = startIndex + gamesPerPage;
+
+    const currentGames = games.slice(startIndex, endIndex);
+
+    const handlePageChange = (newPage) => {
+        dispatch(setPage(newPage));
+    };
+    
+    const totalPages = Math.ceil(allGames.length / gamesPerPage);
+    const paginationButtons = Array.from({ length: totalPages }, (_, index) => (
+        <button
+            key={index}
+            onClick={() => handlePageChange(index + 1)}
+            className={currentPage === index + 1 ? 'active' : ''}
+            disabled={currentPage === index + 1}
+        >
+            {index + 1}
+        </button>
+    ));
 
     useEffect(() => {
         if(!games.length) dispatch(getGames())
@@ -36,7 +59,12 @@ export default function Home (){
     return (
         <div className={style.content}>
             <Filters/>
-            <Cards games={games}/>
+
+            <div>
+                {paginationButtons}
+            </div>
+            
+            <Cards games={currentGames}/>
         </div>
     )
 }
