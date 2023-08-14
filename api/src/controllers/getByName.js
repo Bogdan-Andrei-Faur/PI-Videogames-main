@@ -26,14 +26,16 @@ const getByName = async (name) => {
 
     let getApiName = (await axios(`${API_URL}/games?key=${API_KEY}&search=${name}`))
         .data.results.map(nam => {
-            const genArray = nam.genre ? nam.genres.map((gen) => gen.name) : []
-            const platArray = nam.platforms ? nam.platforms.map((gen) => gen.name) : []
+            const apiGenres = nam.genres ? nam.genres.map(x=>{
+                return {name: x.name}
+            }) : [{name:"no genres"}]
+
                 return {
                     id: nam.id ? nam.id : "undifined",
                     name: nam.name ? nam.name : "",
                     description: nam.description,
-                    genres: genArray,
-                    platforms: platArray,
+                    genres: apiGenres,
+                    platforms: nam.platforms.map((platf) => platf.platform.name),
                     image: nam.background_image,
                     release: nam.released,
                     rating: nam.rating,

@@ -18,12 +18,16 @@ const getById = async (id, type) => {
         return findDb;
     } else {
         const api = await axios(`${API_URL}/games/${id}?key=${API_KEY}`);
+
+        const apiGenres = api.data.genres ? api.data.genres.map(x=>{
+            return {name: x.name}
+        }) : [{name:"no genres"}]
         
         const game = {
             id: api.data.id,
             name: api.data.name,
             description: api.data.description,
-            genres: api.data.genres.map((gen) => gen.name),
+            genres: apiGenres,
             platforms: api.data.platforms.map((platf) => platf.platform.name),
             image: api.data.background_image,
             release: api.data.released,

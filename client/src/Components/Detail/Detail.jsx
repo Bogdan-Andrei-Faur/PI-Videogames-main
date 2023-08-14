@@ -15,15 +15,17 @@ export default function Detail (){
             dispatch(cleanGameDetail({}))
         }
     }, [dispatch, id])
-
+console.log(gameDetail.genres)
     return (
         <div className={style.div}>
             <img className={style.img} src={gameDetail.image} alt={gameDetail.name} />
-            <h1>{gameDetail?.name}</h1>
-            <h2>{gameDetail?.genres}</h2>
-            <h2>{gameDetail?.platforms}</h2>
-            <h2>{gameDetail?.release}</h2>
-            <h2>{gameDetail?.rating}</h2>
+            <h1>{gameDetail.name}</h1>
+            <h2>{gameDetail.genres?.map(gen => gen.name).join(" | ")}</h2>
+            <h2>{gameDetail.platforms?.join(" | ")}</h2>
+            <h2>{gameDetail.release}</h2>
+            <h2>{gameDetail.rating}</h2>
+            <p>{gameDetail.description}</p>
         </div>
+        
     )
 }

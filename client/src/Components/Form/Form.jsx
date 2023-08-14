@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGames, getGenres, postGame } from "../../Redux/Actions/Actions";
-// import { postGame } from "../../Helpers/postGame";
+import { formControl } from "../../Helpers/formControl"
+import { useNavigate } from "react-router-dom";
 
 export default function Form (){
     const dispatch = useDispatch();
     const allGames = useSelector(state => state.allGames)
     const genres = useSelector(state => state.genres)
+    const [error, setError] = useState({});
+    const navigate = useNavigate();
 
     const [input, setInput] = useState({
         name: "",
@@ -18,8 +21,6 @@ export default function Form (){
         rating: ""
     })
 
-    // console.log(input)
-
     if(!allGames.length && !genres.length) {
         dispatch(getGames());
         dispatch(getGenres());
@@ -30,28 +31,44 @@ export default function Form (){
             ...input,
             [event.target.name]: event.target.value
         })
+        setError(formControl({
+            ...input,
+            [event.target.name]: event.target.value
+        }))
     }
 
     const handleSelectGenre = event => {
         setInput({
-          ...input,
-          genres: [...input.genres, event.target.value],
-        });
+            ...input,
+            genres: [...input.genres, event.target.value],
+        })
+        setError(formControl({
+            ...input,
+            genres: [...input.genres, event.target.value],
+        }))
       };
     
-      const handleSelectPlatform = event => {
+    const handleSelectPlatform = event => {
         setInput({
-          ...input,
-          platforms: [...input.platforms, event.target.value],
-        });
+            ...input,
+            platforms: [...input.platforms, event.target.value],
+        })
+        setError(formControl({
+            ...input,
+            platforms: [...input.platforms, event.target.value],
+        }))
       };
     
     const deleteChoice = (category, value) => {
-      const newValues = input[category].filter((event) => event !== value);
-      setInput({
+        const newValues = input[category].filter((event) => event !== value);
+        setInput({
         ...input,
         [category]: newValues
       })
+      setError(formControl({
+        ...input,
+        [category]: newValues
+      }))
     };
     
     const handleSubmit = () => {
@@ -59,14 +76,13 @@ export default function Form (){
             ...input,
             rating: Number(input.rating)
         }
-      dispatch(postGame(numberInput))
+        dispatch(postGame(numberInput))
         dispatch(getGames());
-     
-      console.log(numberInput);
+        navigate("/home");
     };
     
 
-    // const disabled = Object.keys(error).length || !input.name
+    const disabled = Object.keys(error).length || !input.name
 
     return (
         <div>
@@ -81,6 +97,7 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
+                {error.image && <span>》》 {error.image}</span>}
 
                 <div>
                     <h3>Name:</h3>
@@ -92,6 +109,7 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
+                {error.name && <span>》》 {error.name}</span>}
 
                 <div>
                     <h3>Description:</h3>
@@ -105,6 +123,7 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
+                {error.description && <span>》》 {error.description}</span>}
 
                 <div>
                     <h3>Genres:</h3>
@@ -142,6 +161,7 @@ export default function Form (){
                         })
                     }
                 </div>
+                {error.genres && <span> 》》 {error.genres}</span>}
             
                 <div>
                     <h3>Platforms:</h3>
@@ -225,6 +245,7 @@ export default function Form (){
                         })
                     }
                 </div>
+                {error.platforms && <span> 》》 {error.platforms}</span>}
 
                 <div>
                 <h3>Release:</h3>
@@ -235,6 +256,7 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
+                {error.release && <span>》》 {error.release}</span>}
 
                 <div>
                 <h3>Rating:</h3>
@@ -246,13 +268,13 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
+                {error.rating && <span>》》 {error.rating}</span>}
 
                 <div>
                     <button
                         type="submit"
                         value="Create"
-
-                        // disabled={disabled}
+                        disabled={disabled}
                     >Create</button>
                 </div>
             </form>

@@ -4,7 +4,7 @@ import { nameASC } from "../../Helpers/sort";
 const initialState = {
     allGames: [],
     byName: [],
-    gameDetail: {},
+    gameDetail: [],
     genres: [],
     genresFilter: "",
     originFilter: "",

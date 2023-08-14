@@ -15,11 +15,16 @@ const getGames = async () => {
     
     for (const response of responses) {
         const games = response.data.results.map((g) => {
+
+            const apiGenres = g.genres ? g.genres.map(x=>{
+                return {name: x.name}
+            }) : [{name:"no genres"}]
+
             return {
                 id: g.id,
                 name: g.name,
                 description: g.description,
-                genres: g.genres.map((gen) => gen.name),
+                genres: apiGenres,
                 platforms: g.platforms.map((platf) => platf.platform.name),
                 image: g.background_image,
                 release: g.released,

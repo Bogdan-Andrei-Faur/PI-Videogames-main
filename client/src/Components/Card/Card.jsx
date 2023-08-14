@@ -10,7 +10,7 @@ export default function Card ({id, image, name, genres}){
             </Link>
             
             <h2 className={style.name}>{name}</h2>
-            <h3 className={style.genre}>{genres}</h3>
+            <h3 className={style.genre}>{genres.map(gen => gen.name).join(" | ")}</h3>
         </div>
     )
 }
