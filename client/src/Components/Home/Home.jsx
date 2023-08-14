@@ -25,7 +25,8 @@ export default function Home (){
     if(orderState === "rating desc") games.sort(ratingDESC);
     if(orderState === "rating asc") games.sort(ratingASC);
 
-    if(genresFilter.length !== 0 && genresFilter !== "") games = games.filter(g => g.genres.includes(genresFilter));
+    if(genresFilter.length !== 0 && genresFilter !== "") games = games.filter(g => g.genres.map(gen => gen.name).includes(genresFilter));
+
     if(originFilterState === 'created') games = games.filter(genre => typeof genre.id === 'string');
     if(originFilterState === 'existing') games = games.filter(genre => typeof genre.id === 'number');
 
@@ -39,7 +40,7 @@ export default function Home (){
         dispatch(setPage(newPage));
     };
     
-    const totalPages = Math.ceil(allGames.length / gamesPerPage);
+    const totalPages = Math.ceil(games.length / gamesPerPage);
     const paginationButtons = Array.from({ length: totalPages }, (_, index) => (
         <button
             key={index}

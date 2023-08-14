@@ -8,7 +8,7 @@ const postGameHandler = async (req, res) => {
 
         res.status(201).json(response);
     } catch (error) {
-        res.status(404).json({error: error.message});
+        res.status(404).json({error: "This VideoGame already exists."});
     }
 }
 

@@ -8,7 +8,7 @@ export const postGame = input => {
         .then(res => {
         dispatch({type: POST_GAME, payload: res.data});
         })
-        .catch(error => alert(error));
+        .catch(error => alert("This videoGame already exists."));
     }
     };
 export const POST_GAME = 'POST_GAME';

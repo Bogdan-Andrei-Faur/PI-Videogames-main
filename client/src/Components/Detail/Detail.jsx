@@ -15,7 +15,7 @@ export default function Detail (){
             dispatch(cleanGameDetail({}))
         }
     }, [dispatch, id])
-console.log(gameDetail.genres)
+
     return (
         <div className={style.div}>
             <img className={style.img} src={gameDetail.image} alt={gameDetail.name} />
