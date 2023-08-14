@@ -1,4 +1,4 @@
-import { GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER, SET_PAGE} from "../Actions/Actions";
+import { POST_GAME, GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER, SET_PAGE} from "../Actions/Actions";
 import { nameASC } from "../../Helpers/sort";
 
 const initialState = {
@@ -10,10 +10,17 @@ const initialState = {
     originFilter: "",
     order: "",
     currentPage: 1,
+    post: {}
 }
 
 export const reducer = (state = initialState, action) => {
     switch(action.type){
+//-----------------------------------POST----------------------------------
+        case POST_GAME:
+            return {
+                ...state,
+                post: action.payload
+            }
 //------------------------------Todos los GET------------------------------
         case GET_GAMES:
             return {

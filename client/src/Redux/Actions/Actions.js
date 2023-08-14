@@ -1,5 +1,20 @@
 import axios from "axios"
 
+//POST de un nuevo VideoJuego
+
+export const postGame = input => {
+    return dispatch => {
+    axios.post(`http://localhost:3001/videogames`, input)
+        .then(res => {
+        dispatch({type: POST_GAME, payload: res.data});
+        })
+        .catch(error => alert(error));
+    }
+    };
+export const POST_GAME = 'POST_GAME';
+
+//---------------------------------------------------------------------
+
 //Traigo todos los juegos
 export const getGames = () => {
     return dispatch => axios("http://localhost:3001/videogames")

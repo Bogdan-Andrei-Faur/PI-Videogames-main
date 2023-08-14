@@ -44,6 +44,10 @@ export default function SearchBar (){
             <Link to="/home">
                 <button ref={searchBtn} onClick={handleSearch}>Search</button>
             </Link>
+
+            <Link to="/create">
+                <button onClick={handleClick}>Create Game</button>
+            </Link>
         </div>
     )
 }

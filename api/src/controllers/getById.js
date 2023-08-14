@@ -22,6 +22,7 @@ const getById = async (id, type) => {
         const game = {
             id: api.data.id,
             name: api.data.name,
+            description: api.data.description,
             genres: api.data.genres.map((gen) => gen.name),
             platforms: api.data.platforms.map((platf) => platf.platform.name),
             image: api.data.background_image,
