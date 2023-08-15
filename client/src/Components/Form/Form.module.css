@@ -1,0 +1,181 @@
+@font-face {
+    font-family: "Gumela";
+    src: url("../../Fonts/Gumela.ttf");
+}
+
+.background {
+    background-color: #000000c0;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 30px;
+    height: 100%;
+    display: inline-block;
+}
+
+.form {
+    float: left;
+    margin: 10px;
+    max-width: 600px;
+}
+
+.image h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.image input {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.name h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.name input {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.description h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.description textarea {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 280px;
+    height: 190px;
+    padding: 10px;
+}
+
+.genres h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.genres select {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.genres-map button {
+    font-family: "Gumela";
+    color: #00FFB3;
+    border: 0px;
+    background-color: #04131A;
+    max-width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.genres-map button:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.platforms h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.platforms select {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.platforms-map button {
+    font-family: "Gumela";
+    color: #00FFB3;
+    border: 0px;
+    background-color: #04131A;
+    max-width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.platforms-map button:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.release h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.release input {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.rating h2 {
+    font-family: "Gumela";
+    color: white;
+}
+
+.rating input {
+    font-family: "Gumela";
+    color: #00FFB3;
+    background-color: #04131A;
+    border: 0px;
+    border-radius: 20px;
+    width: 200px;
+    height: 35px;
+    padding-left: 10px;
+}
+
+.submit {
+    font-family: "Gumela";
+    font-size: 20px;
+    color: #00FFB3;
+    border: 0px;
+    background-color: #04131A;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+
+.error {
+    margin-top: 10px;
+    font-family: "Gumela";
+    color: rgb(179, 0, 0);
+}

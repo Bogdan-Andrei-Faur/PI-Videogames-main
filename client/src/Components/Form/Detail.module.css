@@ -3,23 +3,13 @@
     src: url("../../Fonts/Gumela.ttf");
 }
 
-.wall {
-    background-color: #000000c0;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 30px;
-    max-width: 1500px;
-    height: 100%;
-    display: inline-block;
-    justify-content: center;
-}
-
 .background {
     border-radius: 30px;
     background-color: #04131A;
-    display: inline-block;
     margin: 10px;
-    max-width: 1000px;
+    max-width: 500px;
+    height: 100%;
+    float: right;
 }
   
 .image {

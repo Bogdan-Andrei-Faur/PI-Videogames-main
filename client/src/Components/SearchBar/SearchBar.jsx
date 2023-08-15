@@ -31,27 +31,30 @@ export default function SearchBar (){
     }
 
     return (
-        <div className={styles.background}>
-            <Link to="/home">
-                <button className={styles.homeButton} onClick={handleClick}>Home</button>
-            </Link>
+        <div>
+            <div className={styles.background}>
+                <Link to="/home">
+                    <button className={styles.homeButton} onClick={handleClick}>Home</button>
+                </Link>
             
-            <input
-                className={styles.searchBar}
-                type="search" 
-                placeholder="Search games..."
-                onChange={handleChange}
-                value={input}
-                onKeyDown={handleKeyPress}
-            />
+                <input
+                    className={styles.searchBar}
+                    type="search" 
+                    placeholder="Search games..."
+                    onChange={handleChange}
+                    value={input}
+                    onKeyDown={handleKeyPress}
+                />
 
-            <Link to="/home">
-                <button className={styles.searchButton} ref={searchBtn} onClick={handleSearch}>Search</button>
-            </Link>
+                <Link to="/home">
+                    <button className={styles.searchButton} ref={searchBtn} onClick={handleSearch}>Search</button>
+                </Link>
 
-            <Link to="/create">
-                <button className={styles.createButton} onClick={handleClick}>Create Game</button>
-            </Link>
+                <Link to="/create">
+                    <button className={styles.createButton} onClick={handleClick}>Create Game</button>
+                </Link>
+            </div>
         </div>
+        
     )
 }

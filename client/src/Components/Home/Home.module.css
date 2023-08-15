@@ -1,1 +1,27 @@
-.content {}
+@font-face {
+    font-family: "Gumela";
+    src: url("../../Fonts/Gumela.ttf");
+}
+
+.home {
+    display: inline-block;
+}
+
+.pagination {
+    display: inline-block;
+    background-color: #000000c0;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    height: 50px;
+    max-width: 600px;
+}
+
+.pagination button {
+    width: 30px;
+    height: 30px;
+    background-color: #04131A;
+    color: #00FFB3;
+    border: 0px;
+    margin: 10px;
+    border-radius: 20px;
+}

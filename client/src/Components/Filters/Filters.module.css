@@ -12,10 +12,10 @@
     display: inline-block;
 }
 
-.homeButton {
+.order {
     margin: 10px 0px;
     margin-left: 10px;
-    width: 55px;
+    width: 95px;
     height: 35px;
     background-color: #04131A;
     color: #00FFB3;
@@ -24,22 +24,9 @@
     font-family: "Gumela";
 }
 
-.searchBar {
-    margin: 10px 0px;
-    margin-left: 5px;
-    padding: 10px;
-    width: 125px;
-    height: 35px;
-    background-color: #04131A;
-    border: 0px;
-    border-radius: 20px;
-    font-family: "Gumela";
-    color: #00FFB3;
-}
-
-.searchButton {
+.genres {
     margin: 10px 5px;
-    width: 55px;
+    width: 95px;
     height: 35px;
     background-color: #04131A;
     color: #00FFB3;
@@ -48,7 +35,7 @@
     font-family: "Gumela";
 }
 
-.createButton {
+.origin {
     margin: 10px 0px;
     margin-right: 10px;
     width: 95px;

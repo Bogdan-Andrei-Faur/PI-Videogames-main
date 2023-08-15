@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
-import style from "./Home.module.css"
+import styles from "./Home.module.css"
 import Cards from "../Cards/Cards";
 import Filters from "../Filters/Filters";
 import { getGames, getGenres, setPage } from "../../Redux/Actions/Actions";
@@ -58,14 +58,14 @@ export default function Home (){
     })
 
     return (
-        <div className={style.content}>
+        <div className={styles.home}>
             <Filters/>
-
-            <div>
-                {paginationButtons}
-            </div>
             
             <Cards games={currentGames}/>
+
+            <div className={styles.pagination}>
+                {paginationButtons}
+            </div>
         </div>
     )
 }

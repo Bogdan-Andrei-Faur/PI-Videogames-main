@@ -1,21 +1,36 @@
-.div {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
-  }
+@font-face {
+  font-family: "Gumela";
+  src: url("../../Fonts/Gumela.ttf");
+}
+
+.background {
+  border-radius: 20px;
+  padding: 0px;
+  background-color: #04131A;
+  width: 300px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img {
+  width: 300px;
+  height: 180px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.name {
+  color: #00FFB3;
+  font-family: "Gumela";
+}
+
+.genre {
+  color: white;
+  font-family: "Gumela";
+}
+
   

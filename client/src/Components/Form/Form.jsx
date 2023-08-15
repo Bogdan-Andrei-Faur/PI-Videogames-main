@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getGames, getGenres, postGame } from "../../Redux/Actions/Actions";
 import { formControl } from "../../Helpers/formControl"
 import { useNavigate } from "react-router-dom";
+import formStyle from "./Form.module.css";
+import detailStyle from "./Detail.module.css"
 
 export default function Form (){
     const dispatch = useDispatch();
@@ -20,6 +22,16 @@ export default function Form (){
         release: "",
         rating: ""
     })
+
+    const defaultImage = {
+        image: "",
+    }
+
+    if(!input.image.length){
+        defaultImage.image = "https://camarasal.com/wp-content/uploads/2020/08/default-image-5-1.jpg"
+    } else {
+        defaultImage.image = input.image
+    }
 
     if(!allGames.length && !genres.length) {
         dispatch(getGames());
@@ -80,15 +92,15 @@ export default function Form (){
         dispatch(getGames());
         navigate("/home");
     };
-    
 
     const disabled = Object.keys(error).length || !input.name
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <h3>Image:</h3>
+        <div className={formStyle.background}>
+            <form className={formStyle.form} onSubmit={handleSubmit}>
+
+                <div className={formStyle.image}>
+                    <h2>Image:</h2>
                     <input
                         type="text"
                         placeholder="Url..."
@@ -97,10 +109,13 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
-                {error.image && <span>》》 {error.image}</span>}
+                <div className={formStyle.error}>
+                    {error.image && <span>》》 {error.image}</span>}
+                </div>
+                
 
-                <div>
-                    <h3>Name:</h3>
+                <div className={formStyle.name}>
+                    <h2>Name:</h2>
                     <input 
                         type="text"
                         name="name"
@@ -109,10 +124,13 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
-                {error.name && <span>》》 {error.name}</span>}
+                <div className={formStyle.error}>
+                    {error.name && <span>》》 {error.name}</span>}
+                </div>
+                
 
-                <div>
-                    <h3>Description:</h3>
+                <div className={formStyle.description}>
+                    <h2>Description:</h2>
                     <textarea
                         type="text"
                         name="description"
@@ -123,10 +141,13 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
-                {error.description && <span>》》 {error.description}</span>}
+                <div className={formStyle.error}>
+                    {error.description && <span>》》 {error.description}</span>}
+                </div>
+                
 
-                <div>
-                    <h3>Genres:</h3>
+                <div className={formStyle.genres}>
+                    <h2>Genres:</h2>
                     <select
                         name="genres"
                         value={input.genres}
@@ -142,29 +163,30 @@ export default function Form (){
                     </select>
                 </div>
 
-                <div>
+                <div className={formStyle["genres-map"]}>
                     {// eslint-disable-next-line
                         input.genres.map((genre, i) => {
                             if (i < 7) 
                                 return (
                                     <div key={i}>
-                                        <div>
-                                            <span>{genre}</span>
-                                        </div>
-                                    
+
                                         <button
                                             type="button"
                                             onClick={() => deleteChoice("genres", genre)}
-                                        >X</button>
+                                        >{genre}</button>
+
                                     </div>
                                 )
                         })
                     }
                 </div>
-                {error.genres && <span> 》》 {error.genres}</span>}
+                <div className={formStyle.error}>
+                    {error.genres && <span> 》》 {error.genres}</span>}
+                </div>
+                
             
-                <div>
-                    <h3>Platforms:</h3>
+                <div className={formStyle.platforms}>
+                    <h2>Platforms:</h2>
                     <select
                         name="platforms"
                         value={input.platforms}
@@ -226,29 +248,30 @@ export default function Form (){
                     </select>
                 </div>
 
-                <div>
+                <div className={formStyle["platforms-map"]}>
                     {// eslint-disable-next-line
                         input.platforms.map((platform, i) => {
                             if (i < 7) 
                                 return (
                                     <div key={i}>
-                                        <div>
-                                            <span>{platform}</span>
-                                        </div>
                                     
                                         <button
                                             type="button"
                                             onClick={() => deleteChoice("platforms", platform)}
-                                        >X</button>
+                                        >{platform}</button>
+
                                     </div>
                                 )
                         })
                     }
                 </div>
-                {error.platforms && <span> 》》 {error.platforms}</span>}
+                <div className={formStyle.error}>
+                    {error.platforms && <span> 》》 {error.platforms}</span>}
+                </div>
+                
 
-                <div>
-                <h3>Release:</h3>
+                <div className={formStyle.release}>
+                    <h2>Release:</h2>
                     <input 
                         type="date"
                         name="release"
@@ -256,28 +279,43 @@ export default function Form (){
                         onChange={handleChange}
                     />
                 </div>
-                {error.release && <span>》》 {error.release}</span>}
-
-                <div>
-                <h3>Rating:</h3>
-                    <input 
-                        type="number"
-                        name="rating"
-                        value={input.rating}
-                        placeholder="Rating..."
-                        onChange={handleChange}
-                    />
+                <div className={formStyle.error}>
+                    {error.release && <span>》》 {error.release}</span>}
                 </div>
-                {error.rating && <span>》》 {error.rating}</span>}
+                
 
-                <div>
-                    <button
-                        type="submit"
-                        value="Create"
-                        disabled={disabled}
-                    >Create</button>
+                <div className={formStyle.rating}>
+                    <h2>Rating:</h2>
+                        <input 
+                            type="number"
+                            name="rating"
+                            value={input.rating}
+                            placeholder="Rating..."
+                            onChange={handleChange}
+                        />
                 </div>
+                <div className={formStyle.error}>
+                    {error.rating && <span>》》 {error.rating}</span>}
+                </div>
+                
+
+                <button
+                    className={formStyle.submit}
+                    type="submit"
+                    value="Create"
+                    disabled={disabled}
+                >Create</button>
             </form>
+
+            <div className={detailStyle.background}>
+                <img className={detailStyle.image} src={defaultImage.image} alt={input.name} />
+                <h1 className={detailStyle.name}>{input.name}</h1>
+                <h2 className={detailStyle.genres}>{input.genres?.map(gen => gen).join(" | ")}</h2>
+                <h3 className={detailStyle.platforms}>{input.platforms?.join(" | ")}</h3>
+                <p className={detailStyle.description}>{input.description}</p>
+                <h4 className={detailStyle.release}>{"Release: " + input.release}</h4>
+                <h4 className={detailStyle.rating}>{"Rating: " + input.rating}</h4>
+            </div>
         </div>
     )
 }

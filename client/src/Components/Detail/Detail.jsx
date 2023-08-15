@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { cleanGameDetail, getById } from "../../Redux/Actions/Actions";
-import style from "./Detail.module.css"
+import styles from "./Detail.module.css"
 
 export default function Detail (){
     const {id} = useParams();
@@ -17,14 +17,16 @@ export default function Detail (){
     }, [dispatch, id])
 
     return (
-        <div className={style.div}>
-            <img className={style.img} src={gameDetail.image} alt={gameDetail.name} />
-            <h1>{gameDetail.name}</h1>
-            <h2>{gameDetail.genres?.map(gen => gen.name).join(" | ")}</h2>
-            <h2>{gameDetail.platforms?.join(" | ")}</h2>
-            <h2>{gameDetail.release}</h2>
-            <h2>{gameDetail.rating}</h2>
-            <p>{gameDetail.description}</p>
+        <div className={styles.wall}>
+            <div className={styles.background}>
+                <img className={styles.image} src={gameDetail.image} alt={gameDetail.name} />
+                <h1 className={styles.name}>{gameDetail.name}</h1>
+                <h2 className={styles.genres}>{gameDetail.genres?.map(gen => gen.name).join(" | ")}</h2>
+                <h3 className={styles.platforms}>{gameDetail.platforms?.join(" | ")}</h3>
+                <p className={styles.description}>{gameDetail.description}</p>
+                <h4 className={styles.release}>{"Release: " + gameDetail.release}</h4>
+                <h4 className={styles.rating}>{"Rating: " + gameDetail.rating}</h4>
+            </div>
         </div>
         
     )

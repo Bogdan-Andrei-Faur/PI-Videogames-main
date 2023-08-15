@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "../Card/Card";
-import style from "./Cards.module.css";
+import styles from "./Cards.module.css";
 
 export default function Cards({games}){
     return (
-        <div className={style.position}>
+        <div className={styles.background}>
             {
                 games?.map(({id, image, name, genres}) => {
                     return (
