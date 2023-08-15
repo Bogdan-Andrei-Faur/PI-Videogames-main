@@ -23,11 +23,16 @@ export default function Detail (){
                 <h1 className={styles.name}>{gameDetail.name}</h1>
                 <h2 className={styles.genres}>{gameDetail.genres?.map(gen => gen.name).join(" | ")}</h2>
                 <h3 className={styles.platforms}>{gameDetail.platforms?.join(" | ")}</h3>
-                <p className={styles.description}>{gameDetail.description}</p>
+                <div>
+                {gameDetail.description && gameDetail.description
+                    .replace(/<p>/g, ' ')
+                    .replace(/<\/p>/g, ' ')
+                    .replace(/<br \/>/g, ' ')}
+                </div>
+                
                 <h4 className={styles.release}>{"Release: " + gameDetail.release}</h4>
                 <h4 className={styles.rating}>{"Rating: " + gameDetail.rating}</h4>
             </div>
         </div>
-        
     )
 }

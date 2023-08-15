@@ -173,6 +173,9 @@
     border-radius: 30px;
     margin-top: 10px;
 }
+.submit:disabled {
+    color: white;
+}
 
 .error {
     margin-top: 10px;
