@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { getByName, cleanStateName } from "../../Redux/Actions/Actions";
-import { Link } from "react-router-dom"; 
+import { Link } from "react-router-dom";
+import styles from "./SearchBar.module.css"
 
 export default function SearchBar (){
     const searchBtn = useRef(null);
@@ -30,23 +31,26 @@ export default function SearchBar (){
     }
 
     return (
-        <div>
+        <div className={styles.background}>
             <Link to="/home">
-                <button onClick={handleClick}>Home</button>
+                <button className={styles.homeButton} onClick={handleClick}>Home</button>
             </Link>
-            <input 
+            
+            <input
+                className={styles.searchBar}
                 type="search" 
-                placeholder="Buscar..."
+                placeholder="Search games..."
                 onChange={handleChange}
                 value={input}
                 onKeyDown={handleKeyPress}
             />
+
             <Link to="/home">
-                <button ref={searchBtn} onClick={handleSearch}>Search</button>
+                <button className={styles.searchButton} ref={searchBtn} onClick={handleSearch}>Search</button>
             </Link>
 
             <Link to="/create">
-                <button onClick={handleClick}>Create Game</button>
+                <button className={styles.createButton} onClick={handleClick}>Create Game</button>
             </Link>
         </div>
     )

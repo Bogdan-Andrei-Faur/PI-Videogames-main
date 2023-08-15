@@ -1,0 +1,53 @@
+@font-face {
+    font-family: "Gumela";
+    src: url("../../Fonts/Gumela.ttf");
+}
+
+.background {
+    background-color: #000000c0;
+    height: 60px;
+    max-width: 600px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+.homeButton {
+    margin: 10px;
+    width: 60px;
+    height: 40px;
+    background-color: #04131A;
+    color: #00FFB3;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.searchBar {
+    margin: 10px;
+    padding: 10px;
+    width: 130px;
+    height: 40px;
+    background-color: #04131A;
+    color: #00FFB3;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.searchButton {
+    margin: 10px;
+    width: 60px;
+    height: 40px;
+    background-color: #04131A;
+    color: #00FFB3;
+    border: 0px;
+    border-radius: 20px;
+}
+
+.createButton {
+    margin: 10px;
+    width: 90px;
+    height: 40px;
+    background-color: #04131A;
+    color: #00FFB3;
+    border: 0px;
+    border-radius: 20px;
+}

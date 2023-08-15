@@ -4,25 +4,20 @@ import {Link} from "react-router-dom";
 
 export default function Landing(){
   return (
-  <div className={styles.landing}>
+  <div className={styles.background}>
+    <header className={styles.title}>
+      <h1>Hello Gamer</h1>
+    </header>
 
-      <header className={styles.titulo}>
-        <h1>VideoGames PI</h1>
-      </header>
+    <div className={styles.intro}>
+      <h2>Bienvenido al PI de Videogames</h2>
+      <br />
+      <h3>Esta pagina es un proyecto individual, para dirigirte al Home presiona el boton "Start".</h3>
+    </div>
 
-      <section className={styles.intro}>
-        <div className={styles["intro-content"]}>
-          <h2>Bienvenido al PI de Videogames</h2>
-          <br />
-          <h3>Esta pagina es un proyecto individual, para dirigirte al Home presiona el boton "Start".</h3>
-        </div>
-      </section>
-
-      <section className={styles.section2}>
-        <Link to="/home">
-          <button className={styles.btn}>Start</button>
-        </Link>
-      </section>
+      <Link to="/home">
+        <button className={styles.btn}>Start</button>
+      </Link>
 
       <section className={styles.technologies}>
         <div className={styles["technology-icons"]}>
@@ -36,7 +31,6 @@ export default function Landing(){
           <img src="https://cdn.icon-icons.com/icons2/2107/PNG/512/file_type_sql_icon_130152.png" alt="SQL" />
         </div>
       </section>
-    
-  </div>
+    </div>
     )
 }
