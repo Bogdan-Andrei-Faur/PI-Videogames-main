@@ -25,7 +25,7 @@ const getByName = async (name) => {
     })
 
     let getApiName = (await axios(`${API_URL}/games?key=${API_KEY}&search=${name}`))
-        .data.results.map(nam => {
+        .data.results.slice(0,15).map(nam => {
             const apiGenres = nam.genres ? nam.genres.map(x=>{
                 return {name: x.name}
             }) : [{name:"no genres"}]

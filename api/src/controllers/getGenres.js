@@ -1,7 +1,7 @@
 require("dotenv").config();
 const {API_KEY, API_URL} = process.env;
 const axios = require("axios");
-const {Videogame, Genre} = require("../db");
+const { Genre } = require("../db");
 
 const getGenres = async () => {
     let apiGenres = (await axios(`${API_URL}/genres?key=${API_KEY}`))
@@ -14,7 +14,7 @@ const getGenres = async () => {
 
     const dbGenres = await Genre.findAll()
 
-    console.log("Se ha cargado correctamente")
+    console.log("Los generos han cargado correctamente")
     return dbGenres;
 };
 

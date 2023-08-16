@@ -19,11 +19,12 @@ export default function Detail (){
     return (
         <div className={styles.wall}>
             <div className={styles.background}>
+                <h1 className={styles.id}>{gameDetail.id}</h1>
                 <img className={styles.image} src={gameDetail.image} alt={gameDetail.name} />
                 <h1 className={styles.name}>{gameDetail.name}</h1>
                 <h2 className={styles.genres}>{gameDetail.genres?.map(gen => gen.name).join(" | ")}</h2>
                 <h3 className={styles.platforms}>{gameDetail.platforms?.join(" | ")}</h3>
-                <div>
+                <div className={styles.description}>
                 {gameDetail.description && gameDetail.description
                     .replace(/<p>/g, ' ')
                     .replace(/<\/p>/g, ' ')

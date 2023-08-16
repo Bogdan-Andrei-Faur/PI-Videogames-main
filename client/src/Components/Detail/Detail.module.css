@@ -21,6 +21,18 @@
     margin: 10px;
     max-width: 1000px;
 }
+
+.id {
+    color: #00FFB3;
+    font-family: "Gumela";
+    padding: 10px;
+    position: absolute;
+    background-color: #000000c0;
+    border-radius: 30px;
+    max-width: 600px;
+    height: 35px;
+    margin: 10px;
+}
   
 .image {
     width: 100%;
@@ -28,37 +40,36 @@
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     object-fit: cover;
-    margin-bottom: 10px;
 }
 
-.background h1 {
+.name {
     color: white;
     font-family: "Gumela";
 }
 
-.background h2 {
+.genres {
     color: #00FFB3;
     font-family: "Gumela";
 }
 
-.background h3 {
+.platforms {
     color: #00FFB3;
     font-family: "Gumela";
 }
 
-.background div {
+.description {
     color: white;
     font-family: "Gumela";
     font-size: 20px;
     margin: 20px;
 }
 
-.background h4 {
+.release {
     color: #00FFB3;
     font-family: "Gumela";
 }
 
-.background h4 {
+.rating {
     color: #00FFB3;
     font-family: "Gumela";
 }
