@@ -31,8 +31,8 @@ const getByName = async (name) => {
             }) : [{name:"no genres"}]
 
                 return {
-                    id: nam.id ? nam.id : "undifined",
-                    name: nam.name ? nam.name : "",
+                    id: nam.id,
+                    name: nam.name,
                     description: nam.description,
                     genres: apiGenres,
                     platforms: nam.platforms.map((platf) => platf.platform.name),

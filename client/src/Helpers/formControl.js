@@ -3,9 +3,9 @@ export const formControl = input => {
     let error = {}; 
 
     if (!input.name) error.name = 'Name is required'
-    else if (!/^[^@#$%^&]+$/.test(input.name)) error.name = 'Name must not contain special characters (@#$%^&)'
+    else if (!/^[^@#$%^&]+$/.test(input.name)) error.name = 'Name must not contain special characters (@#$%^&).'
 
-    if(!input.description) error.description = 'Description is required'
+    if(!input.description || input.description.length < 10) error.description = 'Description is required and need to be more longer than 10 characters.'
 
     if(!input.genres.length) error.genres = 'Genres cannot be empty'
 

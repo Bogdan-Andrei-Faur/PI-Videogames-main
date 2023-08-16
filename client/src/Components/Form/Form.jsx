@@ -93,7 +93,9 @@ export default function Form (){
         navigate("/home");
     };
 
-    const disabled = Object.keys(error).length || !input.name
+    const valid = allGames.filter((game) => game.name === input.name);
+
+    const disabled = Object.keys(error).length || !input.name || valid.length
 
     return (
         <div className={formStyle.background}>

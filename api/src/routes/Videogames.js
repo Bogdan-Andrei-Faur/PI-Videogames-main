@@ -13,6 +13,5 @@ router.get("/", getVideogamesHandler);
 router.get("/:id", getByIdHandler);
 // Ruta para crear un Videojuego.
 router.post("/", validate, postGameHandler);
-// Ruta para borrar un Videojuego.[EXTRA]
 
 module.exports = router;
