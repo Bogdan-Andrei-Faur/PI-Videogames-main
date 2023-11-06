@@ -1,10 +1,13 @@
 import axios from "axios"
 
+
+// const URL = "http://localhost:3001";
+const URL = "https://gamelibraryhub-server.onrender.com";
 //POST de un nuevo VideoJuego
 
 export const postGame = input => {
     return dispatch => {
-    axios.post(`http://localhost:3001/videogames`, input)
+    axios.post(`${URL}/videogames`, input)
         .then(res => {
         dispatch({type: POST_GAME, payload: res.data});
         })
@@ -17,7 +20,7 @@ export const POST_GAME = 'POST_GAME';
 
 //Traigo todos los juegos
 export const getGames = () => {
-    return dispatch => axios("http://localhost:3001/videogames")
+    return dispatch => axios(`${URL}/videogames`)
         .then(res => dispatch({type: GET_GAMES, payload: res.data}))
         .catch(error => alert(error))
 }
@@ -28,7 +31,7 @@ export const GET_GAMES = "GET_GAMES";
 //Traigo los juegos por nombre
 export const getByName = name => {
     return dispatch => {
-    axios(`http://localhost:3001/videogames?name=${name}`)
+    axios(`${URL}/videogames?name=${name}`)
         .then(res => {
         dispatch({type: GET_GAME_BY_NAME, payload: res.data});
         })
@@ -40,7 +43,7 @@ export const GET_GAME_BY_NAME = 'GET_GAME_BY_NAME';
 
 //Traigo los generos
 export const getGenres = () => {
-    return dispatch => axios("http://localhost:3001/genres")
+    return dispatch => axios(`${URL}/genres`)
         .then(res => dispatch({type: GET_GENRES, payload: res.data}))
         .catch(error => alert(error))
 }
@@ -50,7 +53,7 @@ export const GET_GENRES = "GET_GENRES";
 
 //Traigo los juegos por id
 export const getById = id => {
-    return dispatch => axios(`http://localhost:3001/videogames/${id}`)
+    return dispatch => axios(`${URL}/videogames/${id}`)
         .then(res => dispatch({type: GET_GAME_DETAIL, payload: res.data}))
         .catch(error => alert(error));
 };
