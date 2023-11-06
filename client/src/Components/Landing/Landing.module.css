@@ -5,25 +5,20 @@
 
 .background{
   display: inline-block;
-  margin: 10px;
+  margin: 20px;
   max-width: 700px;
   max-height: 900px;
   background-color: #000000c0;
   border-radius: 15px;
   z-index: -1;
   position: static;
-}
-  
-.title {
-  display: inline-block;
-  font-family: "Gumela";
-  color: #ffffff;
+  padding: 30px 20px;
 }
   
 .intro {
   display: inline-block;
   max-width: 600px;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   border: 10px;
   background-color: #04131A;
@@ -42,7 +37,7 @@
 }
 
 .btn {
-  margin: 20px;
+  margin-top: 20px;
   font-family: "Gumela";
   padding: 12px 30px;
   background-color: #04131A;
@@ -51,9 +46,13 @@
   border-radius: 10px;
   border: 0px;
 }
+
+.btn:hover {
+  color: #00FFB3;
+}
   
 .technologies {
-  padding: 30px;
+  padding: 0px 30px;
 }
   
 .technology-icons {

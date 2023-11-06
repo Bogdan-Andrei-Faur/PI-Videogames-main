@@ -5,14 +5,13 @@ import {Link} from "react-router-dom";
 export default function Landing(){
   return (
   <div className={styles.background}>
-    <header className={styles.title}>
-      <h1>Hello Gamer</h1>
-    </header>
-
     <div className={styles.intro}>
       <h2>Bienvenido al PI de Videogames</h2>
       <br />
-      <h3>Esta pagina es un proyecto individual, para dirigirte al Home presiona el boton "Start".</h3>
+      <h3>Esta página es un proyecto individual creado para el bootcamp 'SoyHenry'. Es una biblioteca de videojuegos y utiliza una API llamada <Link to="https://rawg.io/apidocs" target="_blank">Rawg</Link>,
+      además, también es posible agregar nuevos videojuegos a través de un formulario; estos se guardarán en la base de datos.</h3>
+      <br />
+      <h3>Presiona el botón "Start" para acceder a la página.</h3>
     </div>
 
     <Link to="/home">
@@ -20,6 +19,7 @@ export default function Landing(){
     </Link>
 
     <section className={styles.technologies}>
+      <br />
       <div className={styles["technology-icons"]}>
         <img src="https://cdn.icon-icons.com/icons2/2108/PNG/512/javascript_icon_130900.png" alt="JavaScript" />
         <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/react_original_logo_icon_146374.png" alt="React" />
