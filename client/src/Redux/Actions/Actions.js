@@ -1,5 +1,4 @@
-import axios from "axios"
-
+import axios from "axios";
 
 // const URL = "http://localhost:3001";
 const URL = "https://gamelibraryhub-server.onrender.com";

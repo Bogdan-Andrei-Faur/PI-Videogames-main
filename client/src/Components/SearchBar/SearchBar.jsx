@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { getByName, cleanStateName } from "../../Redux/Actions/Actions";
+import { getByName, cleanStateName } from "../../Redux/Actions/Actions.js";
 import { Link } from "react-router-dom";
-import styles from "./SearchBar.module.css"
+import styles from "./SearchBar.module.css";
 
 export default function SearchBar (){
     const searchBtn = useRef(null);

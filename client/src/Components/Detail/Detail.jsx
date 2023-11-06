@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { cleanGameDetail, getById } from "../../Redux/Actions/Actions";
-import styles from "./Detail.module.css"
+import { cleanGameDetail, getById } from "../../Redux/Actions/Actions.js";
+import styles from "./Detail.module.css";
 
 export default function Detail (){
     const {id} = useParams();

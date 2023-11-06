@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import {useDispatch, useSelector} from "react-redux";
-import styles from "./Home.module.css"
-import Cards from "../Cards/Cards";
-import Filters from "../Filters/Filters";
-import { getGames, getGenres, setPage } from "../../Redux/Actions/Actions";
-import { nameASC, nameDES, ratingASC, ratingDESC } from "../../Helpers/sort";
+import styles from "./Home.module.css";
+import Cards from "../Cards/Cards.jsx";
+import Filters from "../Filters/Filters.jsx";
+import { getGames, getGenres, setPage } from "../../Redux/Actions/Actions.js";
+import { nameASC, nameDES, ratingASC, ratingDESC } from "../../Helpers/sort.js";
 
 export default function Home (){
     const dispatch = useDispatch();

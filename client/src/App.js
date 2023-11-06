@@ -1,10 +1,10 @@
 import './App.css';
 import {Route, Routes, useLocation} from "react-router-dom";
 import Landing from './Components/Landing/Landing';
-import Home from './Components/Home/Home';
-import SearchBar from './Components/SearchBar/SearchBar';
-import Detail from './Components/Detail/Detail';
-import Form from './Components/Form/Form';
+import Home from './Components/Home/Home.jsx';
+import SearchBar from './Components/SearchBar/SearchBar.jsx';
+import Detail from './Components/Detail/Detail.jsx';
+import Form from './Components/Form/Form.jsx';
 
 function App() {
   const {pathname} = useLocation();

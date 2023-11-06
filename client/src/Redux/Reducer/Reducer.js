@@ -1,5 +1,5 @@
-import { POST_GAME, GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER, SET_PAGE} from "../Actions/Actions";
-import { nameASC } from "../../Helpers/sort";
+import { POST_GAME, GET_GAMES, GET_GAME_BY_NAME, GET_GAME_DETAIL, GET_GENRES, CLEAN_STATE_NAME, CLEAN_DETAIL, GENRES_FILTER, ORIGIN_FILTER, ORDER, SET_PAGE} from "../Actions/Actions.js";
+import { nameASC } from "../../Helpers/sort.js";
 
 const initialState = {
     allGames: [],

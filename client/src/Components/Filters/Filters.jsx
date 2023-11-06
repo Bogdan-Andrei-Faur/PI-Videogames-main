@@ -1,7 +1,7 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import { order, genresFilter, originFilter } from "../../Redux/Actions/Actions";
-import styles from "./Filters.module.css"
+import { order, genresFilter, originFilter } from "../../Redux/Actions/Actions.js";
+import styles from "./Filters.module.css";
 
 export default function Filters (){
     const dispatch = useDispatch();
