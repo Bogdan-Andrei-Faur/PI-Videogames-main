@@ -43,8 +43,8 @@ export default function Filters (){
 
             <select className={styles.origin} value={originFilterState} onChange={handleOriginFilter}>
                 <option value="">Origin</option>
-                <option value= 'created'>Created</option>
-                <option value= 'existing'>Existing</option>
+                <option value= 'created'>Data Base</option>
+                <option value= 'existing'>Api (Rawg)</option>
             </select>
         </div>
     )
