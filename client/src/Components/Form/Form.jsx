@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGames, getGenres, postGame } from "../../Redux/Actions/Actions.js";
-import { formControl } from "../../Helpers/formControl";
+import { formControl } from "../../Helpers/formControl.js";
 import { useNavigate } from "react-router-dom";
 import formStyle from "./Form.module.css";
 import detailStyle from "./Detail.module.css";

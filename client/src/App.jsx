@@ -1,6 +1,6 @@
 import './App.css';
 import {Route, Routes, useLocation} from "react-router-dom";
-import Landing from './Components/Landing/Landing';
+import Landing from './Components/Landing/Landing.jsx';
 import Home from './Components/Home/Home.jsx';
 import SearchBar from './Components/SearchBar/SearchBar.jsx';
 import Detail from './Components/Detail/Detail.jsx';
