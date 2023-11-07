@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import store from './Redux/Store.js';
 import './index.css'; // Importa el archivo CSS global
 
-ReactDOM.render(
+ReactDOM.render(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
@@ -15,5 +15,4 @@ ReactDOM.render(
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
 );
