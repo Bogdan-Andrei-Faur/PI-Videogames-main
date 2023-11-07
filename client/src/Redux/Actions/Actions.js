@@ -10,7 +10,7 @@ export const postGame = input => {
         .then(res => {
         dispatch({type: POST_GAME, payload: res.data});
         })
-        .catch(error => alert("This videoGame already exists."));
+        .catch(error => console.log("This videoGame already exists.", error));
     }
     };
 export const POST_GAME = 'POST_GAME';
@@ -21,7 +21,7 @@ export const POST_GAME = 'POST_GAME';
 export const getGames = () => {
     return dispatch => axios(`${URL}/videogames`)
         .then(res => dispatch({type: GET_GAMES, payload: res.data}))
-        .catch(error => alert(error))
+        .catch(error => console.log(error))
 }
 export const GET_GAMES = "GET_GAMES";
 
@@ -34,7 +34,7 @@ export const getByName = name => {
         .then(res => {
         dispatch({type: GET_GAME_BY_NAME, payload: res.data});
         })
-        .catch(error => alert(error));
+        .catch(error => console.log(error));
     }
     };
 export const GET_GAME_BY_NAME = 'GET_GAME_BY_NAME';
@@ -44,7 +44,7 @@ export const GET_GAME_BY_NAME = 'GET_GAME_BY_NAME';
 export const getGenres = () => {
     return dispatch => axios(`${URL}/genres`)
         .then(res => dispatch({type: GET_GENRES, payload: res.data}))
-        .catch(error => alert(error))
+        .catch(error => console.log(error))
 }
 export const GET_GENRES = "GET_GENRES";
 
@@ -54,7 +54,7 @@ export const GET_GENRES = "GET_GENRES";
 export const getById = id => {
     return dispatch => axios(`${URL}/videogames/${id}`)
         .then(res => dispatch({type: GET_GAME_DETAIL, payload: res.data}))
-        .catch(error => alert(error));
+        .catch(error => console.log(error));
 };
 export const GET_GAME_DETAIL = 'GET_GAME_DETAIL';
 
