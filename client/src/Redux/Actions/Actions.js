@@ -17,7 +17,7 @@ export const POST_GAME = 'POST_GAME';
 
 //---------------------------------------------------------------------
 
-//Traigo todos los juegos
+//Get todos los juegos
 export const getGames = () => {
     return dispatch => axios(`${URL}/videogames`)
         .then(res => dispatch({type: GET_GAMES, payload: res.data}))
@@ -27,7 +27,7 @@ export const GET_GAMES = "GET_GAMES";
 
 //---------------------------------------------------------------------
 
-//Traigo los juegos por nombre
+//Get los juegos por nombre
 export const getByName = name => {
     return dispatch => {
     axios(`${URL}/videogames?name=${name}`)
@@ -40,7 +40,7 @@ export const getByName = name => {
 export const GET_GAME_BY_NAME = 'GET_GAME_BY_NAME';
 //---------------------------------------------------------------------
 
-//Traigo los generos
+//Get los generos
 export const getGenres = () => {
     return dispatch => axios(`${URL}/genres`)
         .then(res => dispatch({type: GET_GENRES, payload: res.data}))
@@ -50,7 +50,7 @@ export const GET_GENRES = "GET_GENRES";
 
 //---------------------------------------------------------------------
 
-//Traigo los juegos por id
+//Get los juegos por id
 export const getById = id => {
     return dispatch => axios(`${URL}/videogames/${id}`)
         .then(res => dispatch({type: GET_GAME_DETAIL, payload: res.data}))
