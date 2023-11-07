@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import {Route, Routes, useLocation} from "react-router-dom";
 import Landing from './Components/Landing/Landing.jsx';
 import Home from './Components/Home/Home.jsx';
