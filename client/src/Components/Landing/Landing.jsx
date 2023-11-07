@@ -6,7 +6,7 @@ export default function Landing(){
   return (
   <div className={styles.background}>
     <div className={styles.intro}>
-      <h2>Bienvenido al PI de Videogames</h2>
+      <h2>Bienvenido a GameLibraryHub</h2>
       <br />
       <h3>Esta página es un proyecto individual creado para el bootcamp 'SoyHenry'. Es una biblioteca de videojuegos y utiliza una API llamada <Link to="https://rawg.io/apidocs" target="_blank">Rawg</Link>,
       además, también es posible agregar nuevos videojuegos a través de un formulario; estos se guardarán en la base de datos.</h3>
