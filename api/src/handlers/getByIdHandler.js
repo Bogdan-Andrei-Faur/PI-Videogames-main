@@ -9,7 +9,7 @@ const getByIdHandler = async (req, res) => {
 
         res.status(200).json(games);
     } catch (error) {
-        res.status(404).json({error: error.messaje});
+        res.status(404).json({error: error.message});
     }
 }
 
