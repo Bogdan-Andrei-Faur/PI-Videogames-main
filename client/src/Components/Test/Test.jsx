@@ -20,7 +20,7 @@ function Test() {
 
     testToBackEnd();
 
-    const interval = setInterval(testToBackEnd, 15 * 60 * 1000);
+    const interval = setInterval(testToBackEnd, 10 * 60 * 1000);
 
     return () => clearInterval(interval); // Limpiar el intervalo cuando el componente se desmonte
   }, []);
