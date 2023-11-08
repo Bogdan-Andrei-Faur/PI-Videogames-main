@@ -6,12 +6,14 @@ import Home from './Components/Home/Home.jsx';
 import SearchBar from './Components/SearchBar/SearchBar.jsx';
 import Detail from './Components/Detail/Detail.jsx';
 import Form from './Components/Form/Form.jsx';
+import Test from './Components/Test/Test.jsx';
 
 function App() {
   const {pathname} = useLocation();
 
   return (
     <div className="App">
+      <Test/>
       {pathname !== "/" && <SearchBar/>}
         <Routes>
           <Route path="/" element={<Landing/>}/>
